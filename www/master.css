@@ -29,13 +29,13 @@ header {
 	width: 100%;
 	background: url('img/space-pattern.png') repeat;
 	background-position: cover;
-	background-size: 150px;
+	background-size: 10%;
 }
 
 header h1 {
 	font-family: 'Dosis', sans-serif;
 	text-align: center;
-	font-size: 70px;
+	font-size: 100px;
 	font-weight: 500;
 	padding: 100px 0 0 0;
 }
@@ -56,6 +56,7 @@ header #search input {
 	width: 800px;
 	height: 70px;
 	border: 1px solid rgba(217, 217, 217, 1);
+	background-color: rgba(217, 217, 217, 1);
 	border-radius: 70px;
 	outline: inherit;
 	font-size: 40px;

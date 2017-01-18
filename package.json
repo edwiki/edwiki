@@ -1,0 +1,27 @@
+{
+  "name": "edwiki",
+  "version": "1.0.0",
+  "description": "An Elite Dangerous Wiki",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/edwiki/edwiki.git"
+  },
+  "keywords": [
+    "elite",
+    "dangerous",
+    "wiki"
+  ],
+  "author": "Schwifty <schwifty@schwifty.space>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edwiki/edwiki/issues"
+  },
+  "homepage": "https://github.com/edwiki/edwiki#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

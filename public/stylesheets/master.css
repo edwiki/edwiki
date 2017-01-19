@@ -1,0 +1,244 @@
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a, a:visited {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	background-color: rgba(1, 3, 16, 1);
+	color: rgba(217, 217, 217, 1);
+}
+
+header {
+	height: 500px;
+	width: 100%;
+	background: url('../images/space-pattern.png') repeat;
+	background-size: 10%;
+}
+
+header h1 {
+	font-family: 'Dosis', sans-serif;
+	text-align: center;
+	font-size: 100px;
+	font-weight: 500;
+	padding: 100px 0 0 0;
+}
+
+header h1 a {
+	font-family: 'Dosis', sans-serif;
+}
+
+header #search {
+	width: 800px;
+	margin: 75px auto;
+}
+
+header #search i {
+	color: rgba(1, 3, 16, 1);
+	position: absolute;
+	font-size: 40px;
+	margin: 15px 0 0 20px;
+}
+
+header #search input {
+	font-family: 'Merriweather', serif;
+	width: 800px;
+	height: 70px;
+	border: 1px solid rgba(217, 217, 217, 1);
+	background-color: rgba(217, 217, 217, 1);
+	border-radius: 70px;
+	outline: inherit;
+	font-size: 40px;
+	padding: 0 70px;
+	text-align: center;
+}
+
+header h2 {
+	font-family: 'Dosis', sans-serif;
+	text-align: center;
+	font-size: 30px;
+	font-weight: 400;
+	color: rgba(252, 215, 87, 1);
+}
+
+#categories .categories-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+#categories .categories-wrapper .category {
+	float: left;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 50px;
+	width: 450px;
+	height: 250px;
+	border: 3px solid rgba(8, 12, 36, 1);
+	border-radius: 25px;
+	text-align: center;
+	background: url('../images/default-background.png');
+	background-size: cover;
+}
+
+#categories .categories-wrapper .category h3 {
+	display: inline-block;
+	width: auto;
+	padding: 15px 20px;
+	font-family: 'Dosis', sans-serif;
+	font-weight: 400;
+	text-transform: uppercase;
+	font-size: 50px;
+	background-color: rgba(8, 12, 36, 1);
+	transition: 0.3s ease all;
+}
+
+#categories .categories-wrapper .category.guides {
+	background: url('../images/guides.png');
+	background-size: cover;
+}
+
+#categories .categories-wrapper .category.ships {
+	background: url('../images/ships2.png');
+	background-size: cover;
+}
+
+#categories .categories-wrapper .category.systems {
+	background: url('../images/systems.png');
+	background-size: cover;
+}
+
+#categories .categories-wrapper .category.stations {
+	background: url('../images/stations.png');
+	background-size: cover;
+}
+
+#categories .categories-wrapper .category.powerplay {
+	background: url('../images/powerplay.png');
+	background-size: cover;
+}
+
+#categories .categories-wrapper .category.roles {
+	background: url('../images/roles.png');
+	background-size: cover;
+}
+
+.wrapper {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: row;
+}
+
+nav.toolbar {
+	width: 200px;
+	text-align: center;
+	background-size: 100%;
+	font-size: 40px;
+	order: 1;
+}
+
+nav.toolbar .control {
+	margin: 60px 0;
+}
+
+nav.toolbar .control.active {
+	color: rgba(252, 215, 87, 1);
+}
+
+nav.toolbar .control span {
+	font-size: 16px;
+	text-transform: uppercase;
+	font-family: 'Dosis', sans-serif;
+	display: block;
+}
+
+.flex-wrapper {
+	order: 2;
+	margin: 60px 0 0 auto;
+	width: calc(100% - 200px);
+	background-color: rgba(5, 7, 22, 1);
+	border-radius: 25px 0 0 0;
+}
+
+.content {
+	width: 1200px;
+	padding: 25px 100px;
+	margin: 50px auto;
+}
+
+.content .title {
+	margin: 0 0 50px 0;
+	border-bottom: 1px solid rgba(217, 217, 217, 0.7);
+	padding: 0 0 15px 0;
+}
+
+.content .title h2 {
+	display: inline;
+	font-size: 48px;
+	font-weight: 300;
+	font-family: 'Merriweather', serif;
+}
+
+#entry h3 {
+	font-family: 'Merriweather', serif;
+	font-size: 32px;
+	font-weight: 400;
+	margin: 50px 0 32px 0;
+	border-bottom: 1px solid rgba(217, 217, 217, 0.7);
+	padding: 0 0 10px 0;
+}
+
+#entry h4 {
+	font-family: 'Merriweather', serif;
+	font-size: 24px;
+	font-weight: 600;
+	margin: 50px 0 12px 0;
+}
+
+#entry p {
+	font-weight: 300;
+	margin: 0 0 50px 0;
+	font-size: 18px;
+	line-height: 1.5;
+	font-family: 'Roboto', sans-serif;
+}
+
+#entry a {
+	color: rgba(252, 215, 87, 1);
+	font-family: inherit;
+}
+
+#entry a:hover {
+	text-decoration: underline;
+}
+
+#entry span.cite a {
+	vertical-align: super;
+	color: rgba(217, 217, 217, 0.4);
+	font-size: 12px;
+}
+
+#entry ul {
+	margin: 0 0 0 50px;
+}
+
+#entry ul li {
+	line-height: 1.25;
+}

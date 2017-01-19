@@ -5,20 +5,20 @@
 			<span>Categories</span>
 		</div>
 	</a>
-	<a href="#">
-		<div class="control active">
+	<a href="{{ route }}">
+		<div class="control {{#if toolbarActiveView }}active{{/if}}">
 			<i class="fa fa-eye" aria-hidden="true"></i>
 			<span>View</span>
 		</div>
 	</a>
-	<a href="#">
-		<div class="control">
+	<a href="{{ route }}/edit">
+		<div class="control {{#if toolbarActiveEdit }}active{{/if}}">
 			<i class="fa fa-pencil" aria-hidden="true"></i>
 			<span>Edit</span>
 		</div>
 	</a>
-	<a href="#">
-		<div class="control">
+	<a href="{{ route }}/history">
+		<div class="control {{#if toolbarActiveHistory }}active{{/if}}">
 			<i class="fa fa-book" aria-hidden="true"></i>
 			<span>History</span>
 		</div>

@@ -9,6 +9,7 @@ var compression = require('compression')
 
 var index = require('./routes/index');
 var ships = require('./routes/ships');
+var error = require('./routes/error');
 
 var app = express();
 
@@ -26,6 +27,7 @@ app.use(compression());
 
 app.use('/', index);
 app.use('/ships', ships);
+app.use('/error', error);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

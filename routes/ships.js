@@ -8,6 +8,9 @@ router.get('/', function(req, res, next) {
 		if (err) {
 			return res.render('wiki-page-edit', {
 				title: 'Ships',
+				breadcrumbs: [
+					{ title: 'Ships' }
+				],
 				toolbarActiveEdit: true,
 				route: '/ships'
 			});
@@ -16,6 +19,9 @@ router.get('/', function(req, res, next) {
 		var pageHtml = marked(data);
 		res.render('wiki-page', {
 			title: 'Ships',
+			breadcrumbs: [
+				{ title: 'Ships'}
+			],
 			content: pageHtml,
 			toolbarActiveView: true,
 			route: '/ships'
@@ -28,6 +34,9 @@ router.get('/edit', function(req, res, next) {
 		if (err) {
 			return res.render('wiki-page-edit', {
 				title: 'Ships',
+				breadcrumbs: [
+					{ title: 'Ships' }
+				],
 				toolbarActiveEdit: true,
 				route: '/ships'
 			});
@@ -35,6 +44,9 @@ router.get('/edit', function(req, res, next) {
 
 		res.render('wiki-page-edit', {
 			title: 'Ships',
+			breadcrumbs: [
+				{ title: 'Ships' }
+			],
 			markdown: data,
 			toolbarActiveEdit: true,
 			route: '/ships',
@@ -56,6 +68,10 @@ router.get('/:name', function(req, res, next) {
 		if (err) {
 			return res.render('wiki-page-edit', {
 				title: shipName,
+				breadcrumbs: [
+					{ title: 'Ships', href: '/ships' },
+					{ title: shipName }
+				],
 				toolbarActiveEdit: true,
 				route: '/ships/' + shipName
 			});
@@ -64,6 +80,10 @@ router.get('/:name', function(req, res, next) {
 		var pageHtml = marked(data);
 		res.render('wiki-page', {
 			title: shipName,
+			breadcrumbs: [
+				{ title: 'Ships', href: '/ships' },
+				{ title: shipName }
+			],
 			content: pageHtml,
 			toolbarActiveView: true,
 			route: '/ships/' + shipName
@@ -77,6 +97,10 @@ router.get('/:name/edit', function(req, res, next) {
 		if (err) {
 			return res.render('wiki-page-edit', {
 				title: shipName,
+				breadcrumbs: [
+					{ title: 'Ships', href: '/ships' },
+					{ title: shipName }
+				],
 				toolbarActiveEdit: true,
 				route: '/ships/' + shipName
 			});
@@ -84,6 +108,10 @@ router.get('/:name/edit', function(req, res, next) {
 
 		res.render('wiki-page-edit', {
 			title: shipName,
+			breadcrumbs: [
+				{ title: 'Ships', href: '/ships' },
+				{ title: shipName }
+			],
 			markdown: data,
 			toolbarActiveEdit: true,
 			route: '/ships/' + shipName

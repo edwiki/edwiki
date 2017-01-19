@@ -177,6 +177,23 @@ nav.toolbar .control span {
 	border-radius: 25px 0 0 0;
 }
 
+#breadcrumbs {
+	margin: 60px 0 0 200px;
+}
+
+#breadcrumbs a {
+	color: rgba(252, 215, 87, 1);
+}
+
+#breadcrumbs a:hover {
+	text-decoration: underline;
+}
+
+#breadcrumbs ul li {
+	display: inline-block;
+	margin: 0 25px;
+}
+
 .content {
 	width: 1200px;
 	padding: 25px 100px;

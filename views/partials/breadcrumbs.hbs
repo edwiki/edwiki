@@ -1,0 +1,9 @@
+<div id="breadcrumbs">
+	<ul>
+		<li><a href="/">Home</a></li>
+		{{#each breadcrumbs }}
+			<li>&gt;</li>
+			<li>{{#if href }}<a href="{{ this.href }}">{{/if }}{{ this.title }}{{#if href}}</a>{{/if }}</li>
+		{{/each }}
+	</ul>
+</div>

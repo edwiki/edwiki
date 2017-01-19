@@ -9,7 +9,16 @@
 			</div>
 
 			<div id="entry">
-				{{{ content }}}
+				{{#if content }}
+					{{{ content }}}
+				{{ else }}
+					<p class="not-found">
+						This page does not exist (yet).
+					</p>
+					<p class="not-found">
+						Start editing and click SAVE to create this page.
+					</p>
+				{{/if }}
 			</div>
 		</div>
 	</div>

@@ -262,10 +262,6 @@ nav.toolbar .control span {
 	line-height: 1.25;
 }
 
-#edit-entry .not-found {
-	color: rgba(252, 215, 87, 1);
-}
-
 #edit-entry textarea {
 	width: 1000px;
 	height: 100vh;
@@ -294,4 +290,12 @@ nav.toolbar .control span {
 #edit-entry input:hover {
 	background-color: rgba(252, 215, 87, 0.9);
 	border: 1px solid rgba(252, 215, 87, 1);
+}
+
+#edit-entry .not-found, #entry .not-found {
+	margin: 0;
+	font-family: 'Dosis', sans-serif;
+	font-size: 24px;
+	font-weight: 400;
+	color: rgba(252, 215, 87, 1);
 }

@@ -10,12 +10,13 @@ router.get('/:category', function(req, res, next) {
 
 	fs.readFile('data/' + category + '/index.md', 'utf8', function(err, data) {
 		if (err) {
-			return res.render('wiki-page-edit', {
+			if (!req.user) return res.redirect('/');
+			return res.render('wiki-page', {
 				title: categoryCap,
 				breadcrumbs: [
 					{ title: categoryCap }
 				],
-				toolbarActiveEdit: true,
+				toolbarActiveView: true,
 				route: '/wiki/' + category
 			});
 		}
@@ -35,6 +36,7 @@ router.get('/:category', function(req, res, next) {
 
 router.get('/:category/edit', function(req, res, next) {
 	var category = req.params.category;
+	if (!req.user) return res.redirect('/wiki/' + category);
 	var categoryCap = capitalize.words(category);
 
 	fs.readFile('data/' + category + '/index.md', 'utf8', function(err, data) {
@@ -63,6 +65,7 @@ router.get('/:category/edit', function(req, res, next) {
 
 router.post('/:category/edit', function(req, res, next) {
 	var category = req.params.category;
+	if (!req.user) return res.redirect('/wiki/' + category);
 	var categoryCap = capitalize.words(category);
 	var markdown = req.body.content;
 
@@ -77,13 +80,13 @@ router.get('/:category/:page', function(req, res, next) {
 	var page = req.params.page;
 	fs.readFile('data/' + category + '/' + page + '.md', 'utf8', function(err, data) {
 		if (err) {
-			return res.render('wiki-page-edit', {
+			return res.render('wiki-page', {
 				title: page,
 				breadcrumbs: [
 					{ title: categoryCap, href: '/wiki/' + category },
 					{ title: page }
 				],
-				toolbarActiveEdit: true,
+				toolbarActiveView: true,
 				route: '/wiki/' + category + '/' + page
 			});
 		}
@@ -106,6 +109,8 @@ router.get('/:category/:page/edit', function(req, res, next) {
 	var category = req.params.category;
 	var categoryCap = capitalize.words(category);
 	var page = req.params.page;
+	if (!req.user) return res.redirect('/wiki/' + category + '/' + page);
+
 	fs.readFile('data/' + category + '/' + page + '.md', 'utf8', function(err, data) {
 		if (err) {
 			return res.render('wiki-page-edit', {
@@ -136,6 +141,7 @@ router.post('/:category/:page/edit', function(req, res, next) {
 	var category = req.params.category;
 	var categoryCap = capitalize.words(category);
 	var page = req.params.page;
+	if (!req.user) return res.redirect('/wiki/' + category + '/' + page);
 	var markdown = req.body.content;
 
 	fs.writeFile('data/' + category + '/' + page + '.md', markdown, function(err, data) {

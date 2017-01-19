@@ -6,12 +6,22 @@
 				<h2>{{ title }}</h2>
 			</div>
 
-			<div id="edit-entry">
+			<div id="edit-entry" class="clearfix">
 				<form class="edit-entry" action="{{ route }}/edit" method="post">
-					<textarea name="content">{{{ markdown }}}</textarea>
+					{{#if markdown }}
+						<textarea name="content">{{{ markdown }}}</textarea>
+					{{ else }}
+						<p class="not-found">
+							This page does not exist (yet).
+						</p>
+						<p class="not-found">
+							Start editing and click SAVE to create this page.
+						</p>
+						<textarea name="content"></textarea>
+					{{/if }}
+
 					<input type="submit" name="submit" value="Save">
 				</form>
-
 			</div>
 		</div>
 	</div>

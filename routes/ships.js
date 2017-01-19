@@ -5,7 +5,13 @@ var fs = require('fs');
 
 router.get('/', function(req, res, next) {
 	fs.readFile('data/ships/index.md', 'utf8', function(err, data) {
-		if (err) return res.redirect('/error/404/?path=/ships');
+		if (err) {
+			return res.render('wiki-page-edit', {
+				title: 'Ships',
+				toolbarActiveEdit: true,
+				route: '/ships'
+			});
+		}
 
 		var pageHtml = marked(data);
 		res.render('wiki-page', {
@@ -19,7 +25,13 @@ router.get('/', function(req, res, next) {
 
 router.get('/edit', function(req, res, next) {
 	fs.readFile('data/ships/index.md', 'utf8', function(err, data) {
-		if (err) return res.redirect('/error/404/?path=/ships');
+		if (err) {
+			return res.render('wiki-page-edit', {
+				title: 'Ships',
+				toolbarActiveEdit: true,
+				route: '/ships'
+			});
+		}
 
 		res.render('wiki-page-edit', {
 			title: 'Ships',
@@ -41,7 +53,13 @@ router.post('/edit', function(req, res, next) {
 router.get('/:name', function(req, res, next) {
 	var shipName = req.params.name;
 	fs.readFile('data/ships/' + shipName + '.md', 'utf8', function(err, data) {
-		if (err) return res.redirect('/error/404/?path=/ships/' + shipName);
+		if (err) {
+			return res.render('wiki-page-edit', {
+				title: shipName,
+				toolbarActiveEdit: true,
+				route: '/ships/' + shipName
+			});
+		}
 
 		var pageHtml = marked(data);
 		res.render('wiki-page', {
@@ -56,7 +74,13 @@ router.get('/:name', function(req, res, next) {
 router.get('/:name/edit', function(req, res, next) {
 	var shipName = req.params.name;
 	fs.readFile('data/ships/' + shipName + '.md', 'utf8', function(err, data) {
-		if (err) return res.redirect('/error/404/?path=/ships/' + shipName);
+		if (err) {
+			return res.render('wiki-page-edit', {
+				title: shipName,
+				toolbarActiveEdit: true,
+				route: '/ships/' + shipName
+			});
+		}
 
 		res.render('wiki-page-edit', {
 			title: shipName,

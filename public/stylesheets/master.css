@@ -196,7 +196,7 @@ nav.toolbar .control span {
 	font-family: 'Merriweather', serif;
 }
 
-#entry h3 {
+#entry h1 {
 	font-family: 'Merriweather', serif;
 	font-size: 32px;
 	font-weight: 400;
@@ -205,7 +205,7 @@ nav.toolbar .control span {
 	padding: 0 0 10px 0;
 }
 
-#entry h4 {
+#entry h2 {
 	font-family: 'Merriweather', serif;
 	font-size: 24px;
 	font-weight: 600;

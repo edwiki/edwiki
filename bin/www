@@ -9,7 +9,7 @@ var debug = require('debug')('edwiki:server');
 var http = require('http');
 
 /**
- * Get port from environment and store in Express.
+ * Get port from environment and DEBUG=myapp:* npm start store in Express.
  */
 
 var port = normalizePort(process.env.PORT || '3000');

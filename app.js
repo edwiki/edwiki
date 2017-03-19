@@ -14,8 +14,14 @@ var error = require('./routes/error');
 var app = express();
 
 // view engine setup
-app.engine('.hbs', exphbs({defaultLayout: 'main', extname: '.hbs'}));
+app.engine('.hbs', exphbs({
+	defaultLayout: 'main',
+	extname: '.hbs',
+	layoutsDir: __dirname + '/views/layouts',
+	partialsDir: __dirname + '/views/partials'
+}));
 app.set('view engine', '.hbs');
+app.set('views', path.join(__dirname + 'views'));
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));

@@ -4,6 +4,10 @@ var marked = require('marked');
 var fs = require('fs');
 var capitalize = require('capitalize')
 
+router.get('/', function(req, res, next) {
+	res.redirect('/');
+});
+
 router.get('/:category', function(req, res, next) {
 	var category = req.params.category;
 	var categoryCap = capitalize.words(category);
